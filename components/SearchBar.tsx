@@ -3,14 +3,26 @@
 import Image from "next/image";
 import React, { useState } from "react";
 
-const SearchBar = () => {
-  const [searchTerm, setSearchTerm] = useState("");
+interface FormValues {
+  searchTerm: "";
+}
 
-  const handleSubmit = (e) => {
+const SearchBar: React.FC = () => {
+  const [formData, setFormData] = useState<FormValues>({
+    searchTerm: "",
+  });
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    console.log("product searched ", searchTerm);
+    console.log("product searched ", formData.searchTerm);
   };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
   return (
     <div className="w-full bg-white-A700 py-2">
       <div className="flex justify-center items-center">
@@ -22,7 +34,7 @@ const SearchBar = () => {
             <input
               type="text"
               placeholder="Search for products"
-              onChange={(e) => setSearchTerm(e.target.value)}
+              onChange={handleInputChange}
               className="w-full min-w-[17rem] px-4 py-2 border-[1px] border-[#000] outline-none focus:outline-none active:outline-none rounded-l-sm"
             />
           </div>

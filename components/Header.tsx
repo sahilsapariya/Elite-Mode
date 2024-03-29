@@ -14,7 +14,7 @@ const NAV_LINKS = [
 
 const Header = () => {
   const [isNavActive, setIsNavActive] = useState(false);
-  const [cart, setCart] = useState(null);
+
   return (
     <>
       {isNavActive && (
@@ -67,7 +67,10 @@ const Header = () => {
             onClick={() => setIsNavActive(!isNavActive)}
           />
 
-          <Link href="/" className="flex flex-nowrap items-center justify-center">
+          <Link
+            href="/"
+            className="flex flex-nowrap items-center justify-center"
+          >
             <Image
               src="/icons/img_group_19.svg"
               alt="image"
@@ -101,11 +104,10 @@ const Header = () => {
               width={32}
               className="cursor-pointer"
             />
-            {cart && (
-              <span className="absolute top-[-8px] right-[-10px] text-[10px] cursor-pointer bg-orange-500 py-[1px] px-2 rounded-full text-white">
-                {cart?.length}
-              </span>
-            )}
+
+            <span className="absolute top-[-8px] right-[-10px] text-[10px] cursor-pointer bg-orange-500 py-[1px] px-2 rounded-full text-white">
+              1
+            </span>
           </div>
           <div>
             <button
