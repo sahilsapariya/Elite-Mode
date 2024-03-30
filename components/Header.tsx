@@ -4,13 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import SearchBar from "./SearchBar";
+import { NAV_LINKS } from "@/constants";
 
-const NAV_LINKS = [
-  { href: "/", label: "Categories", key: "categories" },
-  { href: "/", label: "New Arrivals", key: "new arrivals" },
-  { href: "/", label: "Features", key: "features" },
-  { href: "/", label: "Collection", key: "collection" },
-];
 
 const Header = () => {
   const [isNavActive, setIsNavActive] = useState(false);
@@ -31,7 +26,7 @@ const Header = () => {
           >
             <Image
               className="m-5 absolute top-0 left-0 cursor-pointer z-100 text-black no-drag"
-              src={"/icons/icon-close.svg"}
+              src={"/icons/header/icon-close.svg"}
               alt="close"
               height={20}
               width={20}
@@ -60,7 +55,7 @@ const Header = () => {
         <div className="flex justify-between items-center gap-4 lg:gap-20">
           <Image
             className="lg:hidden cursor-pointer inline-block w-auto h-auto no-drag"
-            src={"/icons/icon-menu.svg"}
+            src={"/icons/header/icon-menu.svg"}
             alt="menu"
             width={20}
             height={20}
@@ -72,7 +67,7 @@ const Header = () => {
             className="flex flex-nowrap items-center justify-center"
           >
             <Image
-              src="/icons/img_group_19.svg"
+              src="/icons/header/img_group_19.svg"
               alt="image"
               width={32}
               height={32}
@@ -98,7 +93,7 @@ const Header = () => {
         <div className="flex gap-4 flex-nowrap justify-center items-center">
           <div className="relative">
             <Image
-              src={"/icons/img_cart.svg"}
+              src={"/icons/header/img_cart.svg"}
               alt="cart"
               height={32}
               width={32}

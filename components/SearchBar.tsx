@@ -43,7 +43,7 @@ const SearchBar: React.FC = () => {
             <button type="submit">
               <span>
                 <Image
-                  src="/icons/img_search_white_a700.svg"
+                  src="/icons/header/img_search_white_a700.svg"
                   alt="search button"
                   width={20}
                   height={20}
