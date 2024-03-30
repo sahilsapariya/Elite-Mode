@@ -30,11 +30,11 @@ const Header = () => {
             }`}
           >
             <Image
-              className="m-5 absolute top-0 left-0 cursor-pointer z-100 text-black"
+              className="m-5 absolute top-0 left-0 cursor-pointer z-100 text-black no-drag"
               src={"/icons/icon-close.svg"}
               alt="close"
-              height={32}
-              width={32}
+              height={20}
+              width={20}
               onClick={() => setIsNavActive(!isNavActive)}
             />
             <div className="p-6 mt-16">
@@ -59,7 +59,7 @@ const Header = () => {
       <nav className="container mx-auto max-w-[1200px] flex justify-between items-center px-6 [1200px]:px-0 2xl:px-0 relative z-30 py-4 lg:border-b-5 lg:border-b">
         <div className="flex justify-between items-center gap-4 lg:gap-20">
           <Image
-            className="lg:hidden cursor-pointer inline-block"
+            className="lg:hidden cursor-pointer inline-block w-auto h-auto no-drag"
             src={"/icons/icon-menu.svg"}
             alt="menu"
             width={20}
@@ -76,7 +76,7 @@ const Header = () => {
               alt="image"
               width={32}
               height={32}
-              className="cursor-pointer"
+              className="cursor-pointer w-auto h-auto"
             />
             <p className="cursor-pointer text-gray-800 text-2xl font-[Poppins] font-bold">
               Elliye
@@ -102,7 +102,7 @@ const Header = () => {
               alt="cart"
               height={32}
               width={32}
-              className="cursor-pointer"
+              className="cursor-pointer no-drag"
             />
 
             <span className="absolute top-[-8px] right-[-10px] text-[10px] cursor-pointer bg-orange-500 py-[1px] px-2 rounded-full text-white">

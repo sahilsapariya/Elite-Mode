@@ -47,6 +47,7 @@ const SearchBar: React.FC = () => {
                   alt="search button"
                   width={20}
                   height={20}
+                  className="no-drag"
                 />
               </span>
             </button>
