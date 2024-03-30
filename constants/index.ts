@@ -83,3 +83,30 @@ export const FEATURED = [
     price: "20",
   },
 ];
+
+export const WHY_CHOOSE_US = [
+  {
+    src: "/icons/service/img_truck.svg",
+    alt: "truck",
+    label: "Free Shipping",
+    description: "This free shipping only for selected region",
+  },
+  {
+    src: "/icons/service/img_card.svg",
+    alt: "card",
+    label: "Secure Payment",
+    description: "This secure payment only for selected region",
+  },
+  {
+    src: "/icons/service/img_broken.svg",
+    alt: "return",
+    label: "Warrenty",
+    description: "This return policy only for selected region",
+  },
+  {
+    src: "/icons/service/img_support.svg",
+    alt: "support",
+    label: "24/7 Support",
+    description: "This 24/7 support only for selected region",
+  },
+];

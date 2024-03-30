@@ -1,7 +1,9 @@
 import Hero from "@/app/Components/Hero";
 import NewArrivals from "@/app/Components/NewArrivals";
 import Categories from "@/app/Components/Categories";
-import Featured from "./Components/Featured";
+import Featured from "@/app/Components/Featured";
+import WhyChooseUs from "@/app/Components/WhyChooseUs";
+import Brands from "@/app/Components/Brands";
 
 export default function Home() {
   return (
@@ -10,6 +12,8 @@ export default function Home() {
       <NewArrivals />
       <Categories />
       <Featured />
+      <WhyChooseUs />
+      <Brands />
     </main>
   );
 }
