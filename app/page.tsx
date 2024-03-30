@@ -1,6 +1,7 @@
 import Hero from "@/app/Components/Hero";
 import NewArrivals from "@/app/Components/NewArrivals";
 import Categories from "@/app/Components/Categories";
+import Featured from "./Components/Featured";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <NewArrivals />
       <Categories />
+      <Featured />
     </main>
   );
 }

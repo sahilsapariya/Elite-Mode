@@ -44,3 +44,42 @@ export const CATEGORIES = [
     label: "Accesories",
   },
 ];
+
+export const FEATURED = [
+  {
+    src: "/images/featured/img_placeholder_1.png",
+    alt: "1",
+    label: "White Sweatshirt",
+    price: "20",
+  },
+  {
+    src: "/images/featured/img_placeholder_2.png",
+    alt: "2",
+    label: "Green Hoodie",
+    price: "30",
+  },
+  {
+    src: "/images/featured/img_placeholder_3.png",
+    alt: "3",
+    label: "Purpule Hoodie",
+    price: "25",
+  },
+  {
+    src: "/images/featured/img_placeholder_4.png",
+    alt: "4",
+    label: "Light Green",
+    price: "15",
+  },
+  {
+    src: "/images/featured/img_placeholder_5.png",
+    alt: "5",
+    label: "Pink Purse",
+    price: "10",
+  },
+  {
+    src: "/images/featured/img_placeholder_17.png",
+    alt: "6",
+    label: "Pink Hoodie",
+    price: "20",
+  },
+];

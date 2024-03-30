@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Card as NewArrivalCard } from "@/app/Components/NewArrivals";
+import { Card as FeaturedCard } from "@/app/Components/Featured";
 
 interface SliderProps {
   data: any[];
@@ -36,6 +37,8 @@ const Slider = ({ data, cardType }: SliderProps) => {
   var Card: React.ComponentType<any>;
   if (cardType === "new_arrivals") {
     Card = NewArrivalCard;
+  } else if (cardType === "featured") {
+    Card = FeaturedCard;
   }
 
   return (
