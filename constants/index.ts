@@ -31,3 +31,16 @@ export const NEW_ARRIVALS = [
     caption: "100% Cotton",
   },
 ];
+
+export const CATEGORIES = [
+  { src: "/icons/categories/img_sweater.svg", alt: "jacket", label: "Jacket" },
+  { src: "/icons/categories/img_tshirt.svg", alt: "shirt", label: "T-Shirt" },
+  { src: "/icons/categories/img_pants.svg", alt: "pants", label: "Pant" },
+  { src: "/icons/categories/img_boot.svg", alt: "shoes", label: "Shoes" },
+  { src: "/icons/categories/img_dress.svg", alt: "dress", label: "Dress" },
+  {
+    src: "/icons/categories/img_belt.svg",
+    alt: "accessories",
+    label: "Accesories",
+  },
+];

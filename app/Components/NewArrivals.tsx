@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const NewArrivals = () => {
   return (
-    <div className="w-full flex flex-col justify-center items-center">
+    <section className="w-full flex flex-col justify-center items-center">
       <div className="flex flex-col justify-center items-center gap-2">
         <h1 className="text-[32px] text-[#393D46] font-semibold red-rose-bold">
           New Arrivals
@@ -20,7 +20,7 @@ const NewArrivals = () => {
       <div className="mt-10 w-full overflow-hidden flex justify-center">
         <Slider data={NEW_ARRIVALS} cardType="new_arrivals" />
       </div>
-    </div>
+    </section>
   );
 };
 

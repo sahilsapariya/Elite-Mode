@@ -1,6 +1,6 @@
 function Hero() {
   return (
-    <div className="relative w-full flex justify-center items-center h-[580px] bg-gray-50 overflow-hidden">
+    <section className="relative w-full flex justify-center items-center h-[580px] bg-gray-50 overflow-hidden">
       <div className="relative max-w-[1200px] w-full h-full flex items-end">
         <div className="mb-10 ml-10">
           <div className="relative flex flex-col gap-1 z-40 w-fit">
@@ -22,7 +22,7 @@ function Hero() {
         <div className="absolute hidden sm:block top-0 left-0 right-0 bottom-0 m-auto w-full h-full bg-hero-background"></div>
         <div className="absolute sm:hidden top-0 left-0 right-0 bottom-0 m-auto w-full h-full bg-hero-mobile-background"></div>
       </div>
-    </div>
+    </section>
   );
 };
 
