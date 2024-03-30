@@ -4,7 +4,6 @@ import Categories from "@/app/Components/Categories";
 import Featured from "@/app/Components/Featured";
 import WhyChooseUs from "@/app/Components/WhyChooseUs";
 import Brands from "@/app/Components/Brands";
-import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -15,7 +14,6 @@ export default function Home() {
       <Featured />
       <WhyChooseUs />
       <Brands />
-      <Footer />
     </main>
   );
 }
