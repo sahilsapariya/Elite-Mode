@@ -43,7 +43,7 @@
 
 @layer utilities {
   .auth-form-input {
-    @apply appearance-none border-slate-300 border rounded-md w-full p-3 text-gray-700;
+    @apply appearance-none border-slate-300 border rounded-md w-full p-3 text-gray-700 active:outline-black focus:outline-black;
   }
 
   .auth-form-button {

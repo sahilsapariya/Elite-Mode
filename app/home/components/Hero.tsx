@@ -7,7 +7,7 @@ function Hero() {
             <h3 className="font-[poly] sm:text-[rgb(57,61,70)] text-[24px] mb-[-10px] text-white">
               Summar Sale
             </h3>
-            <span className="text-[64px] font-bold italic sm:text-[#393D46] font-poppins mb-2 text-white">
+            <span className="text-[64px] font-bold italic sm:text-[#393D46] font-[Poppins] mb-2 text-white">
               50%{" "}
               <span className="text-white drop-shadow-2 sm:drop-shadow-none">
                 OFF

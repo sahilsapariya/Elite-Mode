@@ -29,7 +29,7 @@ export default function Login() {
     setLoading(true);
     setButtonDisabled(true);
     try {
-      const response = await axios.post("/api/auth/login", user);
+      const response = await axios.post("/api/users/login", user);
 
       toast.success("Login successful");
       router.push("/home");
@@ -50,6 +50,12 @@ export default function Login() {
 
   return (
     <>
+      {loading && (
+        <div className="w-screen h-screen z-50 bg-white opacity-20 flex justify-center items-center">
+          Processing...
+        </div>
+      )}
+
       <h1 className={styles.heading}>Welcome back</h1>
 
       <form onSubmit={handleSubmit} className={styles.form}>
@@ -79,7 +85,11 @@ export default function Login() {
           />
         </div>
 
-        <button type="submit" className="auth-form-button">
+        <button
+          type="submit"
+          className="auth-form-button"
+          disabled={buttonDisabled}
+        >
           Login
         </button>
       </form>
@@ -97,7 +107,10 @@ export default function Login() {
         <span className="h-[1px] w-full bg-gray-400 ml-2"></span>
       </div>
 
-      <button className="auth-button-regular mt-4 flex gap-4 items-center justify-center">
+      <button
+        className="auth-button-regular mt-4 flex gap-4 items-center justify-center"
+        disabled={loading}
+      >
         <Image
           src={"/icons/social/google-color-icon.svg"}
           alt="Google icon"

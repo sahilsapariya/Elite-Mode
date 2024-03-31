@@ -30,12 +30,12 @@ export default function Register() {
     setLoading(true);
     setButtonDisabled(true);
     try {
-      const response = await axios.post("/api/auth/register", user);
+      const response = await axios.post("/api/users/register", user);
 
       toast.success("Registration successful");
-      router.push("/login");
+      router.push("/auth/login");
     } catch (error: any) {
-      toast.error(error.response.data.message);
+      toast.error(error.message);
     }
     setLoading(false);
     setButtonDisabled(false);
@@ -55,6 +55,12 @@ export default function Register() {
 
   return (
     <>
+      {loading && (
+        <div className="w-screen h-screen z-50 bg-white opacity-20 flex justify-center items-center">
+          Processing...
+        </div>
+      )}
+
       <h1 className={styles.heading}>Create your account</h1>
 
       <form onSubmit={handleSubmit} className={styles.form}>
@@ -97,7 +103,11 @@ export default function Register() {
           />
         </div>
 
-        <button type="submit" className="auth-form-button">
+        <button
+          type="submit"
+          className="auth-form-button"
+          disabled={buttonDisabled}
+        >
           Register
         </button>
       </form>
@@ -115,7 +125,10 @@ export default function Register() {
         <span className="h-[1px] w-full bg-gray-400 ml-2"></span>
       </div>
 
-      <button className="auth-button-regular mt-4 flex gap-4 items-center justify-center">
+      <button
+        className="auth-button-regular mt-4 flex gap-4 items-center justify-center"
+        disabled={loading}
+      >
         <Image
           src={"/icons/social/google-color-icon.svg"}
           alt="Google icon"
