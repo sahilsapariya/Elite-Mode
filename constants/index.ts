@@ -10,24 +10,28 @@ export const NEW_ARRIVALS = [
     img: "/images/new_arrival/denim_jackets.jpg",
     alt: "image",
     title: "Denim Men's Jacket",
+    category: "denim-men-jacket",
     caption: "100% Cotton",
   },
   {
     img: "/images/new_arrival/winter_clothes.jpg",
     alt: "image",
     title: "Winter Clothes",
+    category: "winter-clothes",
     caption: "100% Cotton",
   },
   {
     img: "/images/new_arrival/men_winter_jacket.jpg",
     alt: "image",
     title: "Men Winter Jacket",
+    category: "men-winter-jacket",
     caption: "100% Cotton",
   },
   {
     img: "/images/new_arrival/black_clothes.jpg",
     alt: "image",
     title: "Black Clothes",
+    category: "black-clothes",
     caption: "100% Cotton",
   },
 ];
@@ -110,3 +114,234 @@ export const WHY_CHOOSE_US = [
     description: "This 24/7 support only for selected region",
   },
 ];
+
+export const PRODUCT = [
+  {
+    id: 1,
+    imgUrls: [
+      "/images/products/img_placeholder_1.png",
+      "/images/products/img_placeholder_2.png",
+      "/images/products/img_placeholder_3.png",
+      "/images/products/img_placeholder_4.png",
+    ],
+    alt: "white sweatshirt",
+    label: "White Sweatshirt",
+    category: "jacket",
+    gender: "MEN",
+    brand: "Nike",
+    price: 20,
+    discount: 20,
+    prevPrice: 25,
+    offers: [
+      {
+        id: 1,
+        discount: 5,
+        code: "GET5",
+        description: "Get 5% off on this product using HDFC Credit Card",
+      },
+    ],
+    ratings: [
+      { id: 1, rating: 1, userId: 1 },
+      { id: 2, rating: 2, userId: 2 },
+      { id: 3, rating: 2, userId: 3 },
+      { id: 4, rating: 3, userId: 4 },
+      { id: 5, rating: 4, userId: 6 },
+      { id: 6, rating: 4, userId: 7 },
+      { id: 7, rating: 5, userId: 8 },
+      { id: 8, rating: 4, userId: 5 },
+    ],
+    averageRating: 3.5,
+    totalRatings: 8,
+    reviews: [
+      {
+        id: 1,
+        name: "John Doe",
+        rating: 4,
+        review: "This is a great product",
+        imgUrls: [
+          "/images/products/img_placeholder_1.png",
+          "/images/products/img_placeholder_2.png",
+          "/images/products/img_placeholder_3.png",
+        ],
+      },
+    ],
+    colors: ["WHITE", "BLACK", "RED", "BLUE"],
+    sizes: ["S", "M", "L", "XL"],
+    isBestSeller: true,
+  },
+];
+
+export const PRODUCTS = [
+  {
+    id: 1,
+    imgUrls: [
+      "/images/products/img_placeholder_1.png",
+      "/images/products/img_placeholder_2.png",
+      "/images/products/img_placeholder_3.png",
+      "/images/products/img_placeholder_4.png",
+    ],
+    alt: "white sweatshirt",
+    label: "White Sweatshirt",
+    category: "jacket",
+    gender: "MEN",
+    brand: "Nike",
+    price: 20,
+    offer: 20,
+    prevPrice: 25,
+    isBestSeller: true,
+  },
+  {
+    id: 2,
+    imgUrls: [
+      "/images/products/img_placeholder_5.png",
+      "/images/products/img_placeholder_6.png",
+      "/images/products/img_placeholder_7.png",
+      "/images/products/img_placeholder_8.png",
+    ],
+    alt: "green hoodie",
+    label: "Green Hoodie",
+    category: "jacket",
+    gender: "MEN",
+    brand: "Nike",
+    price: 20,
+    offer: 20,
+    prevPrice: 25,
+    isBestSeller: false,
+  },
+  {
+    id: 3,
+    imgUrls: [
+      "/images/products/img_placeholder_9.png",
+      "/images/products/img_placeholder_10.png",
+      "/images/products/img_placeholder_11.png",
+      "/images/products/img_placeholder_12.png",
+    ],
+    alt: "purple hoodie",
+    label: "Purple Hoodie",
+    category: "jacket",
+    gender: "WOMEN",
+    brand: "Zudio",
+    price: 24,
+    offer: 20,
+    prevPrice: 30,
+    isBestSeller: true,
+  },
+  {
+    id: 4,
+    imgUrls: [
+      "/images/products/img_placeholder_13.png",
+      "/images/products/img_placeholder_14.png",
+      "/images/products/img_placeholder_15.png",
+      "/images/products/img_placeholder_16.png",
+    ],
+    alt: "light green",
+    label: "Light Green",
+    category: "jacket",
+    gender: "WOMEN",
+    brand: "Adidas",
+    price: 20,
+    offer: 20,
+    prevPrice: 25,
+    isBestSeller: false,
+  },
+];
+
+export const FILTER = {
+  categories: [
+    { label: "Jacket", value: "jacket" },
+    { label: "T-Shirt", value: "t-shirt" },
+    { label: "Pant", value: "pant" },
+    { label: "Shoes", value: "shoes" },
+    { label: "Dress", value: "dress" },
+    { label: "Accesories", value: "accesories" },
+  ],
+  sizes: [
+    { label: "S", value: "s" },
+    { label: "M", value: "m" },
+    { label: "L", value: "l" },
+    { label: "XL", value: "xl" },
+  ],
+  colors: [
+    { label: "Red", value: "red" },
+    { label: "Blue", value: "blue" },
+    { label: "Green", value: "green" },
+    { label: "Yellow", value: "yellow" },
+  ],
+};
+
+const USER = {
+  id: 1,
+  name: "John Doe",
+  email: "johndoe@gmail.com",
+  password: "password",
+  img: "/images/users/img_placeholder_1.png",
+  address: {
+    street: "123 Main St",
+    city: "New York",
+    state: "NY",
+    zip: "12345",
+    country: "USA",
+  },
+  phone: "+91 1234567890",
+  orders: [
+    {
+      id: 1,
+      totalPrice: 40,
+      products: [
+        {
+          id: 1,
+          label: "White Sweatshirt",
+          category: "jacket",
+          brand: "Nike",
+          price: 20,
+        },
+        {
+          id: 2,
+          label: "Green Hoodie",
+          category: "jacket",
+          brand: "Nike",
+          price: 20,
+        },
+      ],
+    },
+  ],
+  cart: [
+    {
+      id: 1,
+      label: "White Sweatshirt",
+      category: "jacket",
+      brand: "Nike",
+      price: 20,
+    },
+    {
+      id: 2,
+      label: "Green Hoodie",
+      category: "jacket",
+      brand: "Nike",
+      price: 20,
+    },
+  ],
+  transactions: [
+    {
+      id: 1,
+      orderId: 1,
+      date: "2021-09-30T00:00:00.000Z",
+      amount: 40,
+      status: "success",
+    },
+  ],
+  reviews: [
+    {
+      id: 1,
+      productId: 1,
+      rating: 4,
+      review: "This is a great product",
+    },
+    {
+      id: 2,
+      productId: 2,
+      rating: 3,
+      review: "This is a good product",
+    },
+  ],
+};

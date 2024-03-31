@@ -1,13 +1,13 @@
 function Hero() {
   return (
     <section className="relative w-full flex justify-center items-center h-[580px] bg-gray-50 overflow-hidden">
-      <div className="relative max-w-[1200px] w-full h-full flex items-end">
+      <div className="relative max-w-[1200px] w-full h-full flex items-end bg-black">
         <div className="mb-10 ml-10">
           <div className="relative flex flex-col gap-1 z-40 w-fit">
-            <h3 className="font-[poly] sm:text-[rgb(57,61,70)] text-[24px] mb-[-10px]">
+            <h3 className="font-[poly] sm:text-[rgb(57,61,70)] text-[24px] mb-[-10px] text-white">
               Summar Sale
             </h3>
-            <span className="text-[64px] font-bold italic sm:text-[#393D46] font-poppins mb-2">
+            <span className="text-[64px] font-bold italic sm:text-[#393D46] font-poppins mb-2 text-white">
               50%{" "}
               <span className="text-white drop-shadow-2 sm:drop-shadow-none">
                 OFF

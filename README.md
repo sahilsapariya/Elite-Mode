@@ -1,6 +1,5 @@
 ![banner](public/assets/file%20cover%20-%201.png)
 
-
 # Elite-Mode E-Commerce Website
 
 Welcome to Elite-Mode, your one-stop destination for high-quality clothing products. Our e-commerce website offers a wide range of stylish and trendy apparel to suit every taste and occasion. Whether you're looking for casual wear, formal attire, or accessories to complete your look, Elite-Mode has you covered.

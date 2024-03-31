@@ -1,6 +1,7 @@
 import Slider from "@/components/Slider";
 import { NEW_ARRIVALS } from "@/constants";
 import Image from "next/image";
+import Link from "next/link";
 
 const NewArrivals = () => {
   return (
@@ -32,20 +33,23 @@ export const Card = ({
     alt: string;
     title: string;
     caption: string;
+    category: string;
   };
 }) => {
   return (
     <div className="relative min-w-[240px]">
-      <Image
-        src={data.img}
-        alt={data.alt}
-        width={240}
-        height={280}
-        className="rounded-t-[150px] w-full h-[280px] object-cover bg-cover bg-center no-drag"
-      />
+      <Link href={`/category/${data.category}`}>
+        <Image
+          src={data.img}
+          alt={data.alt}
+          width={240}
+          height={280}
+          className="rounded-t-[150px] w-full h-[280px] object-cover bg-cover bg-center no-drag"
+        />
+      </Link>
       <div className="mt-2">
         <h3 className="text-[#393D46] text-[16px] font-semibold">
-          {data.title}
+          <Link href={`/category/${data.category}`}>{data.title}</Link>
         </h3>
         <p className="text-gray-400 font-light text-[14px]">{data.caption}</p>
       </div>
