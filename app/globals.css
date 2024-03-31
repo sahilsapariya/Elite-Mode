@@ -1,10 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poly:ital@0;1&family=Red+Rose:wght@300..700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 .bg-hero-background {
   background-image: url("/images/hero_background.jpg");
@@ -40,4 +39,18 @@
 .no-drag {
   user-select: none; /* Standard syntax */
   -webkit-user-drag: none; /* Webkit/Blink browsers */
+}
+
+@layer utilities {
+  .auth-form-input {
+    @apply appearance-none border-slate-300 border rounded-md w-full p-3 text-gray-700;
+  }
+
+  .auth-form-button {
+    @apply bg-black hover:opacity-85 text-white w-full rounded-md text-center py-3 mt-5 focus:outline-none;
+  }
+
+  .auth-button-regular {
+    @apply hover:bg-slate-50 font-thin w-[80%] max-w-[350px] rounded-md text-center border border-slate-300 py-3 mt-5 focus:outline-none;
+  }
 }

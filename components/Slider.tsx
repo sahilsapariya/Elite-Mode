@@ -3,8 +3,8 @@ import React, { useEffect, useRef } from "react";
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Card as NewArrivalCard } from "@/app/Components/NewArrivals";
-import { Card as FeaturedCard } from "@/app/Components/Featured";
+import { Card as NewArrivalCard } from "@/app/home/components/NewArrivals";
+import { Card as FeaturedCard } from "@/app/home/components/Featured";
 
 interface SliderProps {
   data: any[];
