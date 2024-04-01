@@ -6,7 +6,6 @@ import { useState } from "react";
 import SearchBar from "./SearchBar";
 import { NAV_LINKS } from "@/constants";
 
-
 const Header = () => {
   const [isNavActive, setIsNavActive] = useState(false);
 
@@ -105,12 +104,13 @@ const Header = () => {
             </span>
           </div>
           <div>
-            <button
+            <Link
+              href="/auth/login"
               className="text-white bg-[#000] px-4 py-2 border-0 rounded-sm cursor-pointer"
               type="button"
             >
               Login
-            </button>
+            </Link>
           </div>
         </div>
       </nav>

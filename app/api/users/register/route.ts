@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
         await newUser.save().then(async () => {
           await sendEmail({
             to: email,
-            subject: "Welcome to our app",
+            subject: "Verify your email",
             text: `Welcome to our app, ${username}`,
             userId: newUser._id,
             emailType: "VERIFY",
