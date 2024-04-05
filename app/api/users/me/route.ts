@@ -8,7 +8,7 @@ connect();
 export async function POST(request: NextRequest) {
   try {
     const userId = await getDataFromToken(request);
-    console.log("userId", userId);
+    
     const user = await User.findOne({ _id: userId }).select("-password");
 
     return NextResponse.json({

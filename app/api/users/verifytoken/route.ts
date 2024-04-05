@@ -9,14 +9,10 @@ export async function POST(request: NextRequest) {
     const reqBody = await request.json();
     const { token } = reqBody;
 
-    console.log(token);
-
     const user = await User.findOne({
       verifyToken: token,
       verifyTokenExpire: { $gt: new Date() },
     });
-
-    console.log(user);
 
     if (!user) {
       return NextResponse.json(

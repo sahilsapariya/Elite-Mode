@@ -28,9 +28,9 @@ const SearchBar: React.FC = () => {
       <div className="flex justify-center items-center">
         <form
           onSubmit={handleSubmit}
-          className="flex justify-center items-centermax-w-[500px] w-full mx-auto py-2"
+          className="flex justify-center items-center max-w-[500px] w-full mx-auto py-2"
         >
-          <div className="">
+          <div>
             <input
               type="text"
               placeholder="Search for products"
@@ -39,7 +39,7 @@ const SearchBar: React.FC = () => {
             />
           </div>
 
-          <div className="flex justify-center items-center min-w-[3rem] bg-[#000]">
+          <div className="flex justify-center items-center min-w-[3rem] bg-[#000] h-[42px]">
             <button type="submit">
               <span>
                 <Image

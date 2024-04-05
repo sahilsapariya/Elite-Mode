@@ -17,7 +17,7 @@ const Footer = () => {
         </Link>
         <div className="flex lg:flex-row flex-col gap-x-10 ">
           <div className="p-5">
-            <p className="text-gray-300">
+            <p className="text-gray-300 text-justify">
               Step into style with Elliye. Explore our curated collection of
               chic and trendy clothing, footwear, and accessories for every
               occasion. From casual essentials to statement pieces, find your
@@ -70,11 +70,11 @@ const Footer = () => {
         </div>
         <div className="flex items-center justify-center mt-10 mb-5">
           <a
-            href="https://sahilsapariya03.netlify.app"
+            href="https://sahilsapariya.netlify.app"
             target="_blank"
             className="text-gray-400"
           >
-            @ Made with ❤️, Sahil Sapariya, 2024
+            © Made with ❤️, Sahil Sapariya, 2024
           </a>
         </div>
       </div>

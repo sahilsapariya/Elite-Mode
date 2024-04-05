@@ -1,5 +1,5 @@
 export const NAV_LINKS = [
-  { href: "/", label: "Categories", key: "categories" },
+  { href: "/home/categories", label: "Categories", key: "categories" },
   { href: "/", label: "New Arrivals", key: "new arrivals" },
   { href: "/", label: "Features", key: "features" },
   { href: "/", label: "Collection", key: "collection" },
@@ -48,6 +48,78 @@ export const CATEGORIES = [
     label: "Accesories",
   },
 ];
+
+export const clothingCategories = [
+  // For Men
+  { label: "T-Shirts", slug: "t-shirts", gender: "men" },
+  { label: "Shirts", slug: "shirts", gender: "men" },
+  { label: "Polo Shirts", slug: "polo-shirts", gender: "men" },
+  {
+    label: "Hoodies & Sweatshirts",
+    slug: "hoodies-sweatshirts",
+    gender: "men",
+  },
+  { label: "Jackets & Coats", slug: "jackets-coats", gender: "men" },
+  { label: "Jeans", slug: "jeans", gender: "men" },
+  { label: "Pants & Trousers", slug: "pants-trousers", gender: "men" },
+  { label: "Shorts", slug: "shorts", gender: "men" },
+  { label: "Suits & Blazers", slug: "suits-blazers", gender: "men" },
+  { label: "Activewear", slug: "activewear", gender: "men" },
+  { label: "Swimwear", slug: "swimwear", gender: "men" },
+  { label: "Underwear & Socks", slug: "underwear-socks", gender: "men" },
+  {
+    label: "Sleepwear & Loungewear",
+    slug: "sleepwear-loungewear",
+    gender: "men",
+  },
+  { label: "Formal Wear", slug: "formal-wear", gender: "men" },
+  { label: "Traditional Wear", slug: "traditional-wear", gender: "men" },
+  { label: "Accessories", slug: "accessories", gender: "men" },
+  { label: "Shoes", slug: "shoes", gender: "men" },
+  { label: "Bags", slug: "bags", gender: "men" },
+
+  // For Women
+  { label: "T-Shirts & Tops", slug: "t-shirts-tops", gender: "women" },
+  { label: "Blouses & Shirts", slug: "blouses-shirts", gender: "women" },
+  { label: "Dresses", slug: "dresses", gender: "women" },
+  { label: "Skirts", slug: "skirts", gender: "women" },
+  { label: "Jeans", slug: "jeans", gender: "women" },
+  { label: "Pants & Trousers", slug: "pants-trousers", gender: "women" },
+  { label: "Shorts", slug: "shorts", gender: "women" },
+  { label: "Jumpsuits & Rompers", slug: "jumpsuits-rompers", gender: "women" },
+  { label: "Outerwear", slug: "outerwear", gender: "women" },
+  {
+    label: "Sweaters & Cardigans",
+    slug: "sweaters-cardigans",
+    gender: "women",
+  },
+  {
+    label: "Activewear & Gymwear",
+    slug: "activewear-gymwear",
+    gender: "women",
+  },
+  {
+    label: "Swimwear & Beachwear",
+    slug: "swimwear-beachwear",
+    gender: "women",
+  },
+  {
+    label: "Lingerie & Intimates",
+    slug: "lingerie-intimates",
+    gender: "women",
+  },
+  {
+    label: "Sleepwear & Loungewear",
+    slug: "sleepwear-loungewear",
+    gender: "women",
+  },
+  { label: "Formal Wear", slug: "formal-wear", gender: "women" },
+  { label: "Traditional Wear", slug: "traditional-wear", gender: "women" },
+  { label: "Accessories", slug: "accessories", gender: "women" },
+  { label: "Shoes", slug: "shoes", gender: "women" },
+  { label: "Bags", slug: "bags", gender: "women" },
+];
+
 
 export const FEATURED = [
   {

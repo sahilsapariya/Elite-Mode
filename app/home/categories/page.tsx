@@ -1,11 +1,9 @@
 import React from 'react'
 
-function ForgotPassword() {
+export default function Categories() {
   return (
     <div>
-      
+        Categories
     </div>
   )
 }
-
-export default ForgotPassword

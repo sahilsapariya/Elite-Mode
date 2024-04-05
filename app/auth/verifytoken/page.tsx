@@ -8,7 +8,7 @@ import React, { useEffect, useState } from "react";
 function VerifyEmailPage() {
   const [token, setToken] = useState("");
   const [loading, setLoading] = useState(false);
-  const [verified, setVerified] = useState(true);
+  const [verified, setVerified] = useState(false);
   const [error, setError] = useState(false);
 
   const handleVerify = async () => {

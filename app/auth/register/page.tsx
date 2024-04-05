@@ -16,7 +16,7 @@ export default function Register() {
     username: "",
   });
   const [loading, setLoading] = useState(false);
-  const [registered, setRegistered] = useState(true);
+  const [registered, setRegistered] = useState(false);
 
   const handleChange = (e: any) => {
     const { name, value } = e.target as HTMLInputElement;

@@ -18,7 +18,7 @@ Welcome to Elite-Mode, your one-stop destination for high-quality clothing produ
 
 ## Getting Started
 
-To start shopping on Elite-Mode, simply visit our website at [www.elite-mode.com](https://www.elite-mode.com) and create an account. Once logged in, you can begin browsing our product catalog, adding items to your cart, and completing your purchase through our secure checkout process.
+To start shopping on Elite-Mode, simply visit our website at [www.elite-mode.com](https://www.elitemode.vercel.app) and create an account. Once logged in, you can begin browsing our product catalog, adding items to your cart, and completing your purchase through our secure checkout process.
 
 ## Contributing
 
