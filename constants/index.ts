@@ -146,7 +146,7 @@ export const clothingCategoriesMen = [
     slug: "shoes",
     gender: "men",
     imgUrl: "/icons/categories/men/shoes.png",
-  }
+  },
 ];
 
 export const clothingCategoriesWomen = [
@@ -265,7 +265,7 @@ export const clothingCategoriesWomen = [
     gender: "women",
     imgUrl: "/icons/categories/women/",
   },
-]
+];
 
 export const FEATURED = [
   {
@@ -465,25 +465,30 @@ export const PRODUCTS = [
 ];
 
 export const FILTER = {
-  categories: [
-    { label: "Jacket", value: "jacket" },
-    { label: "T-Shirt", value: "t-shirt" },
-    { label: "Pant", value: "pant" },
-    { label: "Shoes", value: "shoes" },
-    { label: "Dress", value: "dress" },
-    { label: "Accesories", value: "accesories" },
+  brands: [
+    { label: "Nike", value: "nike", id: 1 },
+    { label: "Adidas", value: "adidas", id: 2 },
+    { label: "Zara", value: "zara", id: 3 },
+    { label: "H & M", value: "h&m", id: 4 },
+    { label: "Zudio", value: "zudio", id: 5 },
   ],
-  sizes: [
-    { label: "S", value: "s" },
-    { label: "M", value: "m" },
-    { label: "L", value: "l" },
-    { label: "XL", value: "xl" },
+  price: [
+    { label: "Under $25", value: "0-25" },
+    { label: "$25 to $50", value: "25-50" },
+    { label: "$50 to $100", value: "50-100" },
+    { label: "Over $100", value: "100-" },
   ],
   colors: [
     { label: "Red", value: "red" },
     { label: "Blue", value: "blue" },
     { label: "Green", value: "green" },
     { label: "Yellow", value: "yellow" },
+  ],
+  sizes: [
+    { label: "S", value: "s" },
+    { label: "M", value: "m" },
+    { label: "L", value: "l" },
+    { label: "XL", value: "xl" },
   ],
 };
 

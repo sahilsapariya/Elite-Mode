@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div className="w-full bg-[#393D46] flex justify-center py-12">
       <div className="w-full max-w-[1200px] flex flex-col">
-        <Link href="/" className="flex flex-nowrap ml-5 items-center">
+        <Link href="/" className="flex flex-nowrap ml-5 items-center w-fit">
           <Image
             src="/icons/img_group_19_white_a700.svg"
             alt="image"

@@ -146,15 +146,15 @@
   }
 
   .bold-20 {
-    @apply text-[20px] font-[700] text-[#393D46];
+    @apply text-[20px] font-[700] text-[#393D46] font-[Poppins];
   }
 
   .bold-18 {
-    @apply text-[18px] font-[700] text-[#393D46];
+    @apply text-[18px] font-[700] text-[#393D46] font-[Poppins];
   }
 
   .bold-16 {
-    @apply text-[16px] font-[700] text-[#393D46];
+    @apply text-[16px] font-[700] text-[#393D46] font-[Poppins];
   }
 }
 

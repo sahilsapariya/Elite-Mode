@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Card as NewArrivalCard } from "@/app/home/components/NewArrivals";
 import { Card as FeaturedCard } from "@/app/home/components/Featured";
-import { CategoryCard } from "@/app/home/categories/page";
+import { CategoryCard } from "./Cards";
 
 interface SliderProps {
   data: any[];
