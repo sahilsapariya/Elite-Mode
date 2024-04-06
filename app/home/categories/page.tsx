@@ -6,7 +6,7 @@ import React from "react";
 export default function Categories() {
   return (
     <>
-      <div>
+      <div className="w-full padding-container">
         <h1 className="bold-24 mb-1">Men</h1>
         <hr />
         <div className="hidden w-full md:flexCenter">
@@ -17,7 +17,7 @@ export default function Categories() {
           </div>
         </div>
 
-        <div className="md:hidden">
+        <div className="block md:hidden">
           <Slider
             data={clothingCategoriesMen.slice(
               0,

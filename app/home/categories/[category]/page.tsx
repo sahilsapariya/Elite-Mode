@@ -55,7 +55,6 @@ export default function Category({ params }: { params: { category: string } }) {
 
   const filterProducts = () => {
     return PRODUCTS.filter((product) => {
-      // Filter by selected brands
       if (
         filterState.selectedBrands.length > 0 &&
         !filterState.selectedBrands.includes(product.brand.toLowerCase())
@@ -63,7 +62,6 @@ export default function Category({ params }: { params: { category: string } }) {
         return false;
       }
 
-      // Filter by selected price range
       if (filterState.selectedPrice.length > 0) {
         const [minPrice, maxPrice] = filterState.selectedPrice[0].split("-");
         if (
@@ -74,7 +72,6 @@ export default function Category({ params }: { params: { category: string } }) {
         }
       }
 
-      // Filter by selected colors
       if (
         filterState.selectedColors.length > 0 &&
         !filterState.selectedColors.some((color) =>
@@ -89,7 +86,6 @@ export default function Category({ params }: { params: { category: string } }) {
   };
 
   useEffect(() => {
-    // Call the filterProducts function when filterState changes
     const filteredProducts = filterProducts();
     setProducts(filteredProducts);
   }, [filterState]);

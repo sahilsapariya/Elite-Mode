@@ -32,7 +32,7 @@ export const CategoryCard = ({ data }: Category) => {
 
 export const ProductCard = ({ product }: { product: any }) => {
   return (
-    <div className="m-0 md:m-2 max-w-[210px] w-[calc(100%-1rem)]">
+    <div className="m-0 mb-4 md:m-2 md:mb-8 min-w-[170px] max-w-[210px] w-[calc(100%-1rem)]">
       <Link
         href={`/home/products/${product.id}`}
         className="flex flex-col gap-3"
@@ -42,8 +42,8 @@ export const ProductCard = ({ product }: { product: any }) => {
             src={product.imgUrls[0]}
             alt={product.label}
             width={200}
-            height={200}
-            className="no-drag w-full"
+            height={250}
+            className="no-drag w-full min-h-64"
           />
           <div className="absolute z-10 bottom-2 left-2 flexCenter gap-1 px-1 py-px rounded-sm bg-white opacity-80">
             <span className="regular-14">{product.averageRating}</span>
