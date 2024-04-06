@@ -24,7 +24,7 @@ const SearchBar: React.FC = () => {
   };
 
   return (
-    <div className="w-full bg-white-A700 py-2">
+    <div className="w-full bg-white py-2">
       <div className="flex justify-center items-center">
         <form
           onSubmit={handleSubmit}

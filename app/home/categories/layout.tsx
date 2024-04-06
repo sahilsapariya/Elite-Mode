@@ -4,7 +4,7 @@ export default function CategoriesLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <section className="container max-container padding-container mb-5">
+    <section className="container max-container sm:padding-container my-5 flex gap-5">
       {children}
     </section>
   );
