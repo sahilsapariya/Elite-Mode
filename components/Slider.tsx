@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Card as NewArrivalCard } from "@/app/home/components/NewArrivals";
 import { Card as FeaturedCard } from "@/app/home/components/Featured";
+import { CategoryCard } from "@/app/home/categories/page";
 
 interface SliderProps {
   data: any[];
@@ -34,11 +35,14 @@ const Slider = ({ data, cardType }: SliderProps) => {
       padding: "1rem 0.5rem",
     },
   };
+
   var Card: React.ComponentType<any>;
   if (cardType === "new_arrivals") {
     Card = NewArrivalCard;
   } else if (cardType === "featured") {
     Card = FeaturedCard;
+  } else if (cardType === "category") {
+    Card = CategoryCard;
   }
 
   return (

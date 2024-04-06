@@ -28,14 +28,14 @@ const SearchBar: React.FC = () => {
       <div className="flex justify-center items-center">
         <form
           onSubmit={handleSubmit}
-          className="flex justify-center items-center max-w-[500px] w-full mx-auto py-2"
+          className="flex justify-center items-center max-w-[500px] w-full mx-auto py-2 px-6"
         >
-          <div>
+          <div className="w-full">
             <input
               type="text"
-              placeholder="Search for products"
+              placeholder="Search for products, brands and more"
               onChange={handleInputChange}
-              className="w-full min-w-[17rem] px-4 py-2 border-[1px] border-[#000] outline-none focus:outline-none active:outline-none rounded-l-sm"
+              className="w-full px-4 py-2 border-[1px] border-[#000] outline-none focus:outline-none active:outline-none rounded-l-sm"
             />
           </div>
 

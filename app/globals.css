@@ -141,6 +141,10 @@
     @apply text-[32px] font-bold font-[Poppins] text-[#393D46] leading-[120%];
   }
 
+  .bold-24 {
+    @apply text-[24px] font-bold font-[Poppins] text-[#393D46] leading-[120%];
+  }
+
   .bold-20 {
     @apply text-[20px] font-[700] text-[#393D46];
   }
