@@ -37,7 +37,7 @@ export const Card = ({
   };
 }) => {
   return (
-    <div className="relative min-w-[240px]">
+    <div className="relative w-[240px]">
       <Link href={`/category/${data.category}`}>
         <Image
           src={data.img}

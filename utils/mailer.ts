@@ -20,7 +20,6 @@ export const sendEmail = async ({
 }: SendEmailProps) => {
   try {
     const hashedToken = await bcryptjs.hash(userId.toString(), 10);
-    console.log("userId: ", userId);
     if (emailType === "VERIFY") {
       await User.findByIdAndUpdate(userId, {
         $set: {

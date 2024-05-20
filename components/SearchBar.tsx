@@ -14,8 +14,6 @@ const SearchBar: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    console.log("product searched ", formData.searchTerm);
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,8 +37,8 @@ const SearchBar: React.FC = () => {
             />
           </div>
 
-          <div className="flex justify-center items-center min-w-[3rem] bg-[#000] h-[42px]">
-            <button type="submit">
+          <button type="submit">
+            <div className="flex justify-center items-center min-w-[3rem] bg-[#000] h-[42px]">
               <span>
                 <Image
                   src="/icons/header/img_search_white_a700.svg"
@@ -50,8 +48,8 @@ const SearchBar: React.FC = () => {
                   className="no-drag"
                 />
               </span>
-            </button>
-          </div>
+            </div>
+          </button>
         </form>
       </div>
     </div>

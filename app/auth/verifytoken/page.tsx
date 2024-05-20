@@ -2,6 +2,7 @@
 
 import Loader from "@/components/Loader";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 import React, { useEffect, useState } from "react";
 
@@ -11,13 +12,14 @@ function VerifyEmailPage() {
   const [verified, setVerified] = useState(false);
   const [error, setError] = useState(false);
 
+  const router = useRouter()
+
   const handleVerify = async () => {
     try {
       const response = await axios.post("/api/users/verifytoken", { token });
       setVerified(true);
     } catch (error: any) {
       setError(true);
-      console.log(error.response.data);
     }
   };
 
@@ -69,10 +71,7 @@ function VerifyEmailPage() {
                 Email verified
               </h1>
               <button
-                onClick={() => {
-                  window.opener = null;
-                  window.open(`${process.env.DOMAIN}/home`, "_self");
-                }}
+                onClick={() => router.push("/home")}
                 className="mt-5 px-5 py-3 bg-black text-white rounded-sm"
               >
                 Go to website
