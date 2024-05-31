@@ -13,6 +13,12 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        destructive: {
+          DEFAULT: '#e3342f', // Your base destructive color
+          '15': 'rgba(227, 52, 47, 0.15)', // Destructive color with 15% opacity
+        },
+      },
     },
   },
   plugins: [],

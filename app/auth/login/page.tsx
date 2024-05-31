@@ -1,20 +1,33 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { toast } from "react-hot-toast";
-import { useRouter } from "next/navigation";
+import React, { useState, useTransition } from "react";
 import styles from "../auth.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import { useForm } from "react-hook-form";
+
+import * as z from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { LoginSchema } from "@/schemas";
+import { FormError } from "@/components/form-error";
+import { FormSuccess } from "@/components/form-success";
+import { login } from "@/actions/login";
+
+type LoginFormData = z.infer<typeof LoginSchema>;
 
 export default function Login() {
-  const router = useRouter();
-  const [buttonDisabled, setButtonDisabled] = useState(false);
-  const [user, setUser] = useState({
-    email: "",
-    password: "",
+  const [error, setError] = useState<string | undefined>("");
+  const [success, setSuccess] = useState<string | undefined>("");
+  const [isPending, startTransition] = useTransition();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginFormData>({
+    resolver: zodResolver(LoginSchema),
   });
-  const [loading, setLoading] = useState(false);
+
+  const [user, setUser] = useState<LoginFormData>({ email: "", password: "" });
 
   const handleChange = (e: any) => {
     const { name, value } = e.target as HTMLInputElement;
@@ -24,33 +37,18 @@ export default function Login() {
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setLoading(true);
-    setButtonDisabled(true);
-    try {
-      const response = await axios.post("/api/users/login", user);
-
-      toast.success("Login successful");
-      router.push("/home");
-    } catch (error: any) {
-      toast.error(error.response.data.message);
-    }
-    setLoading(false);
-    setButtonDisabled(false);
+  const onSubmit = (data: LoginFormData) => {
+    startTransition(() => {
+      login(data).then((data) => {
+        setError(data.error);
+        setSuccess(data.success);
+      });
+    });
   };
-
-  useEffect(() => {
-    if (user.email.length > 0 && user.password.length > 0) {
-      setButtonDisabled(false);
-    } else {
-      setButtonDisabled(true);
-    }
-  }, [user]);
 
   return (
     <>
-      {loading && (
+      {isPending && (
         <div className="w-screen h-screen z-50 bg-white opacity-20 flex justify-center items-center">
           Processing...
         </div>
@@ -58,38 +56,43 @@ export default function Login() {
 
       <h1 className={styles.heading}>Welcome back</h1>
 
-      <form onSubmit={handleSubmit} className={styles.form}>
+      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
         <div className="mb-2">
           <input
             type="email"
             id="email"
-            name="email"
+            {...register("email")}
             value={user.email}
             onChange={handleChange}
             className="auth-form-input"
             placeholder="Email"
-            required
+            disabled={isPending}
           />
+          {errors.email && (
+            <p className="error-message">{errors.email.message}</p>
+          )}
         </div>
 
         <div className="mb-2">
           <input
             type="password"
             id="password"
-            name="password"
+            {...register("password")}
             value={user.password}
             onChange={handleChange}
             className="auth-form-input"
             placeholder="Password"
-            required
+            disabled={isPending}
           />
+          {errors.password && (
+            <p className="error-message">{errors.password.message}</p>
+          )}
         </div>
 
-        <button
-          type="submit"
-          className="auth-form-button"
-          disabled={buttonDisabled}
-        >
+        <FormError message={error} />
+        <FormSuccess message={success} />
+
+        <button type="submit" className="auth-form-button" disabled={isPending}>
           Login
         </button>
       </form>
@@ -109,7 +112,7 @@ export default function Login() {
 
       <button
         className="auth-button-regular mt-4 flex gap-4 items-center justify-center"
-        disabled={loading}
+        disabled={isPending}
       >
         <Image
           src={"/icons/social/google-color-icon.svg"}
