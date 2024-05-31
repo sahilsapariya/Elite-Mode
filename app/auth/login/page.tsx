@@ -40,8 +40,8 @@ export default function Login() {
   const onSubmit = (data: LoginFormData) => {
     startTransition(() => {
       login(data).then((data) => {
-        setError(data.error);
-        setSuccess(data.success);
+        setError(data?.error);
+        setSuccess(data?.success);
       });
     });
   };
