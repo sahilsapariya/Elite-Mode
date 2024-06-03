@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useTransition } from "react";
+import React, { Suspense, useState, useTransition } from "react";
 import styles from "../auth.module.css";
 import Link from "next/link";
 import Image from "next/image";
@@ -62,13 +62,13 @@ export default function Login() {
   };
 
   return (
-    <>
-      {isPending && (
+    <Suspense
+      fallback={
         <div className="w-screen h-screen z-50 bg-white opacity-20 flex justify-center items-center">
           Processing...
         </div>
-      )}
-
+      }
+    >
       <h1 className={styles.heading}>Welcome back</h1>
 
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
@@ -138,6 +138,6 @@ export default function Login() {
         />
         <span>Continue with Google</span>
       </button>
-    </>
+    </Suspense>
   );
 }
