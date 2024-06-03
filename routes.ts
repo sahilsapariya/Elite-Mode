@@ -3,7 +3,7 @@
  * These routes are not protected by the auth guard
  * @type {string[]}
  */
-export const publicRoutes: string[] = ["/home"];
+export const publicRoutes: string[] = ["/home", "/auth/new-verification"];
 
 /**
  * An array of routes that are used for authentication

@@ -1,27 +1,35 @@
 "use client";
 
 import Loader from "@/components/Loader";
-import axios from "axios";
 import { useRouter } from "next/navigation";
-
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
+import { newVerification } from "@/actions/new-verification";
 
 function VerifyEmailPage() {
   const [token, setToken] = useState("");
   const [loading, setLoading] = useState(false);
   const [verified, setVerified] = useState(false);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState("");
 
-  const router = useRouter()
+  const router = useRouter();
 
-  const handleVerify = async () => {
-    try {
-      const response = await axios.post("/api/users/verifytoken", { token });
-      setVerified(true);
-    } catch (error: any) {
-      setError(true);
-    }
-  };
+  const handleVerify = useCallback(() => {
+    if(!token) {
+      setError("Missing Token")
+    };
+
+    newVerification(token)
+      .then((res) => {
+        if (res.error) {
+          setError(res.error);
+        } else {
+          setVerified(true);
+        }
+      })
+      .catch(() => {
+        setError("Error verifying email");
+      });
+  }, [token]);
 
   useEffect(() => {
     const urlToken = window.location.href.split("=")[1] || "";
@@ -34,7 +42,7 @@ function VerifyEmailPage() {
       handleVerify();
       setLoading(false);
     }
-  }, [token]);
+  }, [token, handleVerify]);
 
   return (
     <>
@@ -71,10 +79,10 @@ function VerifyEmailPage() {
                 Email verified
               </h1>
               <button
-                onClick={() => router.push("/home")}
+                onClick={() => router.push("/auth/login")}
                 className="mt-5 px-5 py-3 bg-black text-white rounded-sm"
               >
-                Go to website
+                Go to login
               </button>
             </div>
           ) : (

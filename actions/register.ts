@@ -6,6 +6,8 @@ import { RegisterSchema } from "@/schemas";
 import * as z from "zod";
 import { db } from "@/db/db";
 import { getUserByEmail } from "@/data/user";
+import { generateVerificationToken } from "@/utils/tokens";
+import { sendVerificationMail } from "@/utils/verification-mail";
 
 export const registerAction = async (
   values: z.infer<typeof RegisterSchema>
@@ -20,7 +22,7 @@ export const registerAction = async (
   const { email, password, name } = validatedFields.data;
   const hashedPassword = await bcrypt.hash(password, 10);
 
-  const existingUser = await getUserByEmail(email)
+  const existingUser = await getUserByEmail(email);
 
   if (existingUser) {
     return {
@@ -36,9 +38,11 @@ export const registerAction = async (
     },
   });
 
-  // TODO: Send email to user
+  const verificationToken = await generateVerificationToken(email);
+
+  await sendVerificationMail(verificationToken.email, verificationToken.token);
 
   return {
-    success: "Email Sent!",
+    success: "Confirmation email sent!",
   };
 };
