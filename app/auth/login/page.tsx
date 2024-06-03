@@ -11,10 +11,19 @@ import { LoginSchema } from "@/schemas";
 import { FormError } from "@/components/form-error";
 import { FormSuccess } from "@/components/form-success";
 import { login } from "@/actions/login";
+import { signIn } from "next-auth/react";
+import { DEFAULT_LOGIN_REDIRECT } from "@/routes";
+import { useSearchParams } from "next/navigation";
 
 type LoginFormData = z.infer<typeof LoginSchema>;
 
 export default function Login() {
+  const searchParams = useSearchParams();
+  const urlError =
+    searchParams.get("error") === "OAuthAccountNotLinked"
+      ? "Email already in use with different provider!"
+      : "";
+
   const [error, setError] = useState<string | undefined>("");
   const [success, setSuccess] = useState<string | undefined>("");
   const [isPending, startTransition] = useTransition();
@@ -43,6 +52,12 @@ export default function Login() {
         setError(data?.error);
         setSuccess(data?.success);
       });
+    });
+  };
+
+  const handleGoogleLogin = (provider: "google") => {
+    signIn(provider, {
+      callbackUrl: DEFAULT_LOGIN_REDIRECT,
     });
   };
 
@@ -89,7 +104,7 @@ export default function Login() {
           )}
         </div>
 
-        <FormError message={error} />
+        <FormError message={error || urlError} />
         <FormSuccess message={success} />
 
         <button type="submit" className="auth-form-button" disabled={isPending}>
@@ -113,6 +128,7 @@ export default function Login() {
       <button
         className="auth-button-regular mt-4 flex gap-4 items-center justify-center"
         disabled={isPending}
+        onClick={() => handleGoogleLogin("google")}
       >
         <Image
           src={"/icons/social/google-color-icon.svg"}

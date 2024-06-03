@@ -11,6 +11,8 @@ import { RegisterSchema } from "@/schemas";
 import { FormError } from "@/components/form-error";
 import { FormSuccess } from "@/components/form-success";
 import { registerAction } from "@/actions/register";
+import { signIn } from "next-auth/react";
+import { DEFAULT_LOGIN_REDIRECT } from "@/routes";
 
 type RegisterFormData = z.infer<typeof RegisterSchema>;
 
@@ -47,6 +49,12 @@ export default function Register() {
         setError(data.error);
         setSuccess(data.success);
       });
+    });
+  };
+
+  const handleGoogleLogin = (provider: "google") => {
+    signIn(provider, {
+      callbackUrl: DEFAULT_LOGIN_REDIRECT,
     });
   };
 
@@ -133,6 +141,7 @@ export default function Register() {
       <button
         className="auth-button-regular mt-4 flex gap-4 items-center justify-center"
         disabled={isPending}
+        onClick={() => handleGoogleLogin("google")}
       >
         <Image
           src={"/icons/social/google-color-icon.svg"}
