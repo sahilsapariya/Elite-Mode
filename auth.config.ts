@@ -13,7 +13,7 @@ export default {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
     Credentials({
-      async authorize(credentials) {
+      async authorize(credentials): Promise<any> {
         const validatedFields = LoginSchema.safeParse(credentials);
 
         if (validatedFields.success) {
@@ -21,16 +21,16 @@ export default {
 
           const user = await getUserByEmail(email);
 
-          if (!user || !user.password) return;
+          if (!user || !user.password) return null;
 
           const passwordMatch = await bcrypt.compare(password, user.password);
 
           if (passwordMatch) {
             return user;
           }
+          return null;
         }
-
-        return;
+        return null;
       },
     }),
   ],

@@ -6,7 +6,7 @@ export type ExtendedUser = DefaultSession["user"] & {
 
 declare module "next-auth" {
   interface User extends DefaultUser {
-    emailVerified?: boolean;
+    emailVerified?: boolean | undefined;
   }
   interface Session {
     user: ExtendedUser;
