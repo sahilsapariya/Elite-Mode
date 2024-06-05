@@ -24,6 +24,7 @@ export default function Login() {
       ? "Email already in use with different provider!"
       : "";
 
+  const [showTwoFactor, setShowTwoFactor] = useState(false);
   const [error, setError] = useState<string | undefined>("");
   const [success, setSuccess] = useState<string | undefined>("");
   const [isPending, startTransition] = useTransition();
@@ -46,12 +47,33 @@ export default function Login() {
     });
   };
 
+  const formReset = () => {
+    setUser({ email: "", password: "" });
+    setError("");
+    setSuccess("");
+  };
+
   const onSubmit = (data: LoginFormData) => {
     startTransition(() => {
-      login(data).then((data) => {
-        setError(data?.error);
-        setSuccess(data?.success);
-      });
+      login(data)
+        .then((data) => {
+          if (data?.error) {
+            formReset();
+            setError(data.error);
+          }
+
+          if (data?.success) {
+            formReset();
+            setSuccess(data.success);
+          }
+
+          if (data?.twoFactor) {
+            setShowTwoFactor(true);
+          }
+        })
+        .catch(() => {
+          setError("Something went wrong! Please try again.");
+        });
     });
   };
 
@@ -72,37 +94,60 @@ export default function Login() {
       <h1 className={styles.heading}>Welcome back</h1>
 
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-        <div className="mb-2">
-          <input
-            type="email"
-            id="email"
-            {...register("email")}
-            value={user.email}
-            onChange={handleChange}
-            className="auth-form-input"
-            placeholder="Email"
-            disabled={isPending}
-          />
-          {errors.email && (
-            <p className="error-message">{errors.email.message}</p>
-          )}
-        </div>
+        {showTwoFactor && (
+          <>
+            <div className="mb-2">
+              <input
+                type="text"
+                id="code"
+                {...register("code")}
+                value={user.code}
+                onChange={handleChange}
+                className="auth-form-input"
+                placeholder="123456"
+                disabled={isPending}
+              />
+              {errors.code && (
+                <p className="error-message">{errors.code.message}</p>
+              )}
+            </div>
+          </>
+        )}
+        {!showTwoFactor && (
+          <>
+            <div className="mb-2">
+              <input
+                type="email"
+                id="email"
+                {...register("email")}
+                value={user.email}
+                onChange={handleChange}
+                className="auth-form-input"
+                placeholder="Email"
+                disabled={isPending}
+              />
+              {errors.email && (
+                <p className="error-message">{errors.email.message}</p>
+              )}
+            </div>
 
-        <div className="mb-2">
-          <input
-            type="password"
-            id="password"
-            {...register("password")}
-            value={user.password}
-            onChange={handleChange}
-            className="auth-form-input"
-            placeholder="Password"
-            disabled={isPending}
-          />
-          {errors.password && (
-            <p className="error-message">{errors.password.message}</p>
-          )}
-        </div>
+            <div className="mb-2">
+              <input
+                type="password"
+                id="password"
+                {...register("password")}
+                value={user.password}
+                onChange={handleChange}
+                className="auth-form-input"
+                placeholder="Password"
+                disabled={isPending}
+              />
+              {errors.password && (
+                <p className="error-message">{errors.password.message}</p>
+              )}
+            </div>
+          </>
+        )}
 
         <div className="mt-4 mb-3">
           <Link
