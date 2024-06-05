@@ -47,7 +47,7 @@
   }
 
   .auth-form-button {
-    @apply bg-black hover:opacity-85 text-white w-full rounded-md text-center py-3 mt-5 focus:outline-none;
+    @apply bg-black hover:opacity-85 text-white w-full rounded-md text-center py-3 mt-2 focus:outline-none;
   }
 
   .auth-button-regular {

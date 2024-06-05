@@ -104,6 +104,15 @@ export default function Login() {
           )}
         </div>
 
+        <div className="mt-4 mb-3">
+          <Link
+            href={"/auth/forgot-password"}
+            className="text-sm font-light mt-2"
+          >
+            Forgot password?
+          </Link>
+        </div>
+
         <FormError message={error || urlError} />
         <FormSuccess message={success} />
 
